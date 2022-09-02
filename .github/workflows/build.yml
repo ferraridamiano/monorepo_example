@@ -25,10 +25,10 @@ jobs:
         melos bootstrap
     
     - name: Build Linux app
-      run: flutter build linux
+      run: cd main_app && flutter build linux
 
   build_windows:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Build on Windows
     steps:
     - name: Checkout
@@ -49,4 +49,4 @@ jobs:
         melos bootstrap
     
     - name: Build Windows app
-      run: flutter build windows
+      run: cd main_app && flutter build windows
