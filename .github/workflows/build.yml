@@ -1,0 +1,52 @@
+name: Build on Linux and Windows
+
+on: push
+
+jobs:
+  build_linux:
+    runs-on: ubuntu-latest
+    name: Build on Linux
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+        cache: true
+
+    - name: Flutter version
+      run: flutter --version
+
+    - name: Install Melos and bootstrap (get the dependencies)
+      run: |
+        dart pub global activate melos
+        melos bootstrap
+    
+    - name: Build Linux app
+      run: flutter build linux
+
+build_windows:
+    runs-on: ubuntu-latest
+    name: Build on Windows
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+        cache: true
+
+    - name: Flutter version
+      run: flutter --version
+
+    - name: Install Melos and bootstrap (get the dependencies)
+      run: |
+        dart pub global activate melos
+        melos bootstrap
+    
+    - name: Build Windows app
+      run: flutter build windows
