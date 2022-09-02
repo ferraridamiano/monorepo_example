@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translations/translations.dart';
+import 'package:translations/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,9 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    var foo = Foo(); // No error with Foo class
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
