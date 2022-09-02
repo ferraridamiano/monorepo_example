@@ -27,7 +27,7 @@ jobs:
     - name: Build Linux app
       run: flutter build linux
 
-build_windows:
+  build_windows:
     runs-on: ubuntu-latest
     name: Build on Windows
     steps:
