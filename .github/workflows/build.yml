@@ -25,6 +25,7 @@ jobs:
       run: flutter --version
 
     - name: Install Melos and bootstrap (get the dependencies)
+      shell: cmd
       run: |
         dart pub global activate melos
         melos bootstrap
